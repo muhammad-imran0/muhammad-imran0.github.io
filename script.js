@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll(
     '.section-title, .about-text, .about-highlights, .highlight-card, ' +
-    '.skill-category, .project-card, .timeline-item, .contact-card'
+    '.skill-category, .project-card, .timeline-item, .contact-card, .cert-grid'
   ).forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
