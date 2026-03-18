@@ -3,176 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Imran</title>
+<title>Muhammad Imran — Principal Software Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="layout">
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- LEFT SIDEBAR (fixed) -->
-  <header class="sidebar">
-    <div class="sidebar-inner">
-      <div class="sidebar-top">
-        <h1><a href="/">Muhammad Imran</a></h1>
-        <h2>Principal Software Engineer</h2>
-        <p class="tagline">I build scalable web apps and AI-driven solutions with 6+ years of experience across the full stack.</p>
+<!-- FLOATING PARTICLES -->
+<canvas id="particles"></canvas>
 
-        <nav class="sidebar-nav">
-          <a href="#about" class="nav-link active"><span class="nav-line"></span> About</a>
-          <a href="#experience" class="nav-link"><span class="nav-line"></span> Experience</a>
-          <a href="#projects" class="nav-link"><span class="nav-line"></span> Projects</a>
-          <a href="#education" class="nav-link"><span class="nav-line"></span> Education</a>
-        </nav>
+<!-- NAVBAR -->
+<nav class="nav" id="nav">
+  <a href="#" class="logo">MI</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" data-num="01">About</a>
+    <a href="#experience" data-num="02">Experience</a>
+    <a href="#projects" data-num="03">Projects</a>
+    <a href="#skills" data-num="04">Skills</a>
+    <a href="#contact" data-num="05">Contact</a>
+  </div>
+  <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <p class="hero-greeting reveal">Hi, my name is</p>
+    <h1 class="hero-name reveal">
+      <span class="line">Muhammad</span>
+      <span class="line gradient-text">Imran.</span>
+    </h1>
+    <h2 class="hero-headline reveal">I build things for the web & AI.</h2>
+    <p class="hero-desc reveal">
+      Principal Software Engineer with <strong>6+ years</strong> building enterprise platforms, AI-driven features, and scalable full-stack solutions. Currently pursuing an <strong>M.Sc. in AI</strong> at UEL London.
+    </p>
+    <div class="hero-cta reveal">
+      <a href="#projects" class="btn-glow">See My Work</a>
+      <a href="#contact" class="btn-ghost">Say Hello</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title reveal"><span class="num">01.</span> About Me</h2>
+    <div class="about-content">
+      <div class="about-text reveal">
+        <p>I'm a full-stack engineer and team lead based in <strong>London, UK</strong>. I enjoy building things that live on the internet — from <strong>enterprise SaaS platforms</strong> to <strong>AI-powered features</strong> and mobile SDKs.</p>
+        <p>Over the past 6+ years, I've worked at a product company building AI analytics tools (<a href="https://canvs.ai" target="_blank">Canvs.ai</a>), a global KYC platform serving 158+ countries (<a href="https://shuftipro.com" target="_blank">Shufti Pro</a>), and a travel tech startup. Recently, I built a <a href="https://muhammad-imran0.github.io/TB-Detection-Deep-Learning/">TB detection system</a> using deep learning that achieved 100% accuracy.</p>
+        <p>Here are some technologies I work with:</p>
+        <div class="tech-list">
+          <span>React / Vue / Angular</span>
+          <span>Node.js / TypeScript</span>
+          <span>GraphQL / REST APIs</span>
+          <span>AWS / CI/CD</span>
+          <span>Python / MATLAB</span>
+          <span>Deep Learning / CNNs</span>
+        </div>
       </div>
-
-      <div class="sidebar-bottom">
-        <div class="social-links">
-          <a href="https://github.com/muhammad-imran0" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/muhammad-imran0" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:imranyasin7866@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+447353799620" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      <div class="about-image reveal">
+        <div class="image-frame">
+          <div class="avatar-placeholder">
+            <span>MI</span>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- RIGHT CONTENT (scrollable) -->
-  <main class="content">
+<!-- EXPERIENCE -->
+<section class="section section-dark" id="experience">
+  <div class="container">
+    <h2 class="section-title reveal"><span class="num">02.</span> Where I've Worked</h2>
 
-    <!-- ABOUT -->
-    <section id="about" class="content-section">
-      <h3 class="section-heading">About</h3>
-      <div class="section-body">
-        <p>I'm a full-stack engineer and team lead based in <strong>London, UK</strong>, currently pursuing an <a href="#">M.Sc. in Artificial Intelligence</a> at the University of East London. I enjoy building things that live on the internet — from enterprise SaaS platforms to AI-powered features and mobile SDKs.</p>
-
-        <p>My main focus these days is combining my software engineering background with deep learning and computer vision. I recently built a <a href="https://muhammad-imran0.github.io/TB-Detection-Deep-Learning/">TB detection system</a> using CNNs that achieved 100% test accuracy.</p>
-
-        <p>Over the past 6+ years, I've had the privilege of working at a <a href="#experience">product company</a> building AI-driven analytics tools, a <a href="#experience">global KYC platform</a> serving 158+ countries, and a travel tech startup. I've worked across <strong>React, Vue, Angular, Node.js, TypeScript, GraphQL, AWS</strong>, and more — always focused on delivering clean, scalable code under tight deadlines.</p>
-
-        <p>When I'm not coding, I'm exploring new AI frameworks, mentoring other developers, or working towards my Master's degree.</p>
+    <div class="exp-timeline">
+      <div class="exp-card reveal" data-aos="fade-up">
+        <div class="exp-glow"></div>
+        <div class="exp-header">
+          <div>
+            <h3>Principal Software Engineer</h3>
+            <p class="exp-company">@ <a href="https://tkxel.com" target="_blank">tkxel</a> · Team Lead · Delivery Lead</p>
+          </div>
+          <span class="exp-date">2021 — 2025</span>
+        </div>
+        <ul class="exp-list">
+          <li>Core engineer on <strong>Canvs.ai</strong> for 4+ years — delivered mission-critical features</li>
+          <li>Built AI chatbot systems, data viz (Highcharts/ECharts/Plotly), and enterprise React/Vue/Angular apps</li>
+          <li>Designed Node.js + TypeScript APIs (GraphQL & REST) optimized for scale</li>
+          <li>Penetration testing, Auth0 SSO, and security compliance</li>
+          <li>Led code reviews, mentorship, and knowledge-sharing across the team</li>
+        </ul>
+        <div class="exp-tags">
+          <span>React</span><span>Vue</span><span>Angular</span><span>Node.js</span><span>TypeScript</span><span>GraphQL</span><span>AWS</span><span>LLM APIs</span>
+        </div>
       </div>
-    </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="content-section">
-      <h3 class="section-heading">Experience</h3>
+      <div class="exp-card reveal">
+        <div class="exp-glow"></div>
+        <div class="exp-header">
+          <div>
+            <h3>Software Engineer</h3>
+            <p class="exp-company">@ <a href="https://shuftipro.com" target="_blank">Programmers Force</a></p>
+          </div>
+          <span class="exp-date">2019 — 2021</span>
+        </div>
+        <ul class="exp-list">
+          <li>Full-stack engineer on <strong>Shufti Pro</strong> — global KYC platform (158+ countries)</li>
+          <li>Built & published a <strong>React Native SDK</strong> on npm for mobile KYC</li>
+          <li>Real-time video call verification APIs, OCR pipelines & Vision APIs</li>
+          <li>Delivered <strong>9 major features</strong> across frontend, backend, and mobile</li>
+        </ul>
+        <div class="exp-tags">
+          <span>Vue.js</span><span>React Native</span><span>Laravel</span><span>Node.js</span><span>MongoDB</span><span>PostgreSQL</span>
+        </div>
+      </div>
 
-      <div class="experience-item">
-        <div class="exp-date">2021 — 2025</div>
-        <div class="exp-body">
-          <h4>Principal Software Engineer · Team Lead · <span class="company">tkxel</span></h4>
-          <p>Core full-stack engineer on the <a href="https://canvs.ai" target="_blank">Canvs.ai</a> platform for 4+ years. Built AI-driven chat assistant bots, interactive data visualisation (Highcharts, ECharts, Plotly), and scalable React/Vue/Angular frontends with Node.js + TypeScript backends. Conducted penetration testing, implemented Auth0 SSO, and led code reviews and mentorship across the engineering team.</p>
-          <div class="tags">
-            <span>React</span><span>Vue</span><span>Angular</span><span>Node.js</span><span>TypeScript</span><span>GraphQL</span><span>AWS</span><span>LLM APIs</span><span>Auth0</span>
+      <div class="exp-card reveal">
+        <div class="exp-glow"></div>
+        <div class="exp-header">
+          <div>
+            <h3>WordPress Developer</h3>
+            <p class="exp-company">@ One58 Travel & Tours</p>
+          </div>
+          <span class="exp-date">2018 — 2019</span>
+        </div>
+        <ul class="exp-list">
+          <li>Custom plugins, WordPress APIs, MySQL backend</li>
+          <li>Responsive themes with jQuery & Bootstrap</li>
+        </ul>
+        <div class="exp-tags">
+          <span>WordPress</span><span>PHP</span><span>MySQL</span><span>jQuery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title reveal"><span class="num">03.</span> Things I've Built</h2>
+
+    <div class="project-showcase reveal">
+      <div class="project-info">
+        <p class="project-overline">Featured Project</p>
+        <h3>TB Detection — Deep Learning</h3>
+        <div class="project-description">
+          <p>Built 3 CNN models (Custom CNN, GoogLeNet, ResNet-18) to classify chest X-rays as Normal or Tuberculosis. GoogLeNet achieved <strong>100% test accuracy</strong> on 630 images. Implemented oversampling, data augmentation, ROC analysis, and comprehensive evaluation.</p>
+        </div>
+        <div class="project-tech-list">
+          <span>MATLAB</span><span>Deep Learning</span><span>GoogLeNet</span><span>ResNet-18</span><span>Transfer Learning</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://muhammad-imran0.github.io/TB-Detection-Deep-Learning/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          <a href="https://github.com/muhammad-imran0/TB-Detection-Deep-Learning" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <div class="project-stats-grid">
+          <div class="pstat"><span class="pstat-val">100%</span><span class="pstat-label">Accuracy</span></div>
+          <div class="pstat"><span class="pstat-val">1.0</span><span class="pstat-label">AUC</span></div>
+          <div class="pstat"><span class="pstat-val">4.2K</span><span class="pstat-label">Images</span></div>
+          <div class="pstat"><span class="pstat-val">3</span><span class="pstat-label">Models</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="other-projects">
+      <h3 class="reveal">Other Notable Projects</h3>
+      <div class="project-grid">
+        <div class="mini-card reveal">
+          <div class="mini-card-top">
+            <i class="fas fa-folder-open"></i>
+            <div class="mini-card-links"><a href="https://canvs.ai" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+          </div>
+          <h4>Canvs.ai Platform</h4>
+          <p>AI chatbot, data viz (Highcharts/Plotly), Auth0 SSO, React frontend, Node.js backend. 4+ years of core development.</p>
+          <div class="mini-tags"><span>React</span><span>Node.js</span><span>GraphQL</span><span>AWS</span></div>
+        </div>
+        <div class="mini-card reveal">
+          <div class="mini-card-top">
+            <i class="fas fa-folder-open"></i>
+            <div class="mini-card-links"><a href="https://shuftipro.com" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+          </div>
+          <h4>Shufti Pro SDK</h4>
+          <p>React Native SDK on npm, video call verification APIs, OCR pipelines, admin portals. Used in 158+ countries.</p>
+          <div class="mini-tags"><span>React Native</span><span>Vue.js</span><span>OCR</span><span>MongoDB</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-dark" id="skills">
+  <div class="container">
+    <h2 class="section-title reveal"><span class="num">04.</span> Skills & Education</h2>
+    <div class="skills-education-grid">
+      <div class="skills-col reveal">
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="skill-bars">
+            <div class="skill-bar-item"><span class="skill-name">React / Next.js</span><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">Vue.js</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">Angular</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">TypeScript</span><div class="bar"><div class="bar-fill" style="width:92%"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Backend & Cloud</h4>
+          <div class="skill-bars">
+            <div class="skill-bar-item"><span class="skill-name">Node.js / Express</span><div class="bar"><div class="bar-fill" style="width:93%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">GraphQL / REST</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">AWS / DevOps</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">MongoDB / PostgreSQL</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>AI / Machine Learning</h4>
+          <div class="skill-bars">
+            <div class="skill-bar-item"><span class="skill-name">Deep Learning / CNNs</span><div class="bar"><div class="bar-fill" style="width:82%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">Transfer Learning</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">MATLAB / Python</span><div class="bar"><div class="bar-fill" style="width:78%"></div></div></div>
+            <div class="skill-bar-item"><span class="skill-name">LLM / NLP</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
           </div>
         </div>
       </div>
-
-      <div class="experience-item">
-        <div class="exp-date">2019 — 2021</div>
-        <div class="exp-body">
-          <h4>Software Engineer · <span class="company">Programmers Force</span></h4>
-          <p>Full-stack engineer on <a href="https://shuftipro.com" target="_blank">Shufti Pro</a>, a global KYC and identity verification platform used in 158+ countries. Built and published a React Native SDK on npm, developed real-time video call verification APIs, integrated OCR pipelines and Vision APIs, and delivered 9 major features across frontend, backend, and mobile.</p>
-          <div class="tags">
-            <span>Vue.js</span><span>React Native</span><span>Laravel</span><span>Node.js</span><span>MongoDB</span><span>PostgreSQL</span><span>OCR</span>
-          </div>
+      <div class="education-col reveal">
+        <div class="edu-card">
+          <span class="edu-badge">In Progress</span>
+          <h4>M.Sc. Artificial Intelligence</h4>
+          <p>University of East London · 2025 — Present</p>
+        </div>
+        <div class="edu-card">
+          <h4>B.S. Software Engineering</h4>
+          <p>Lahore Leads University · Graduated 2018</p>
+        </div>
+        <div class="edu-card award-card">
+          <i class="fas fa-trophy"></i>
+          <h4>Employee of the Month</h4>
+          <p>Multiple occasions · tkxel · 2021</p>
+        </div>
+        <div class="cert-list">
+          <h4>Certifications</h4>
+          <p>React (Basic) · HackerRank 2023</p>
+          <p>JavaScript (Intermediate) · HackerRank 2023</p>
+          <p>Mobile App Development · 2017</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="experience-item">
-        <div class="exp-date">2018 — 2019</div>
-        <div class="exp-body">
-          <h4>WordPress Developer · <span class="company">One58 Travel & Tours</span></h4>
-          <p>Built and maintained travel booking solutions with custom WordPress plugins, server-side functionality using WordPress APIs and MySQL, and responsive themes with jQuery and Bootstrap.</p>
-          <div class="tags">
-            <span>WordPress</span><span>PHP</span><span>MySQL</span><span>jQuery</span><span>Bootstrap</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container contact-center">
+    <p class="contact-overline reveal"><span class="num">05.</span> What's Next?</p>
+    <h2 class="contact-heading reveal">Get In Touch</h2>
+    <p class="contact-desc reveal">I'm currently open to new opportunities in full-stack development, AI/ML engineering, and technical leadership. My inbox is always open — whether it's a role, a project, or just a hello.</p>
+    <a href="mailto:imranyasin7866@gmail.com" class="btn-glow reveal">Say Hello</a>
+    <div class="contact-socials reveal">
+      <a href="https://github.com/muhammad-imran0" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/muhammad-imran0" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:imranyasin7866@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+447353799620"><i class="fas fa-phone"></i></a>
+    </div>
+  </div>
+</section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="content-section">
-      <h3 class="section-heading">Projects</h3>
-
-      <div class="experience-item">
-        <div class="exp-date">2026</div>
-        <div class="exp-body">
-          <h4>
-            <a href="https://muhammad-imran0.github.io/TB-Detection-Deep-Learning/" target="_blank">
-              TB Detection from Chest X-Rays <i class="fas fa-arrow-up-right-from-square fa-xs"></i>
-            </a>
-          </h4>
-          <p>Built and compared three CNN models (Custom CNN, GoogLeNet, ResNet-18) to classify chest X-rays as Normal or Tuberculosis. The best model achieved <strong>100% test accuracy</strong> on 630 images with an AUC of 1.0000. Addressed 5:1 class imbalance through oversampling and implemented comprehensive evaluation with ROC curves, confusion matrices, and per-class metrics.</p>
-          <div class="tags">
-            <span>MATLAB</span><span>Deep Learning</span><span>GoogLeNet</span><span>ResNet-18</span><span>Transfer Learning</span><span>Computer Vision</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-date">2021 — 2025</div>
-        <div class="exp-body">
-          <h4>Canvs.ai Platform Development</h4>
-          <p>Led end-to-end development of core platform features: AI chatbot system with React frontend and Node.js backend, interactive data visualisation with custom chart solutions, security compliance with Auth0 SSO and penetration testing, and migration of legacy services to scalable architecture.</p>
-          <div class="tags">
-            <span>React</span><span>Node.js</span><span>TypeScript</span><span>Highcharts</span><span>ECharts</span><span>Plotly</span><span>Auth0</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-date">2019 — 2021</div>
-        <div class="exp-body">
-          <h4>Shufti Pro Platform & React Native SDK</h4>
-          <p>Built a cross-platform React Native SDK published on npm for mobile KYC verification, developed real-time video call verification APIs, and built OCR and annotation systems for document verification workflows used by clients in 158+ countries.</p>
-          <div class="tags">
-            <span>React Native</span><span>Vue.js</span><span>PHP</span><span>MongoDB</span><span>PostgreSQL</span><span>Video API</span><span>OCR</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="content-section">
-      <h3 class="section-heading">Education</h3>
-
-      <div class="experience-item">
-        <div class="exp-date">2025 — Present</div>
-        <div class="exp-body">
-          <h4>M.Sc. Artificial Intelligence · <span class="company">University of East London</span></h4>
-          <p>Specialising in Deep Learning, Computer Vision, and NLP. Building AI solutions for real-world healthcare problems including automated TB detection from chest X-rays.</p>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-date">Graduated 2018</div>
-        <div class="exp-body">
-          <h4>B.S. Software Engineering · <span class="company">Lahore Leads University</span></h4>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-date">2021</div>
-        <div class="exp-body">
-          <h4><i class="fas fa-trophy" style="color: #ffd700; margin-right: 6px; font-size: 0.85rem;"></i>Employee of the Month — Multiple Occasions · <span class="company">tkxel</span></h4>
-          <p>Recognised for innovative problem-solving, effective project management, and engineering leadership.</p>
-        </div>
-      </div>
-
-    </section>
-
-    <footer class="content-footer">
-      <p>Built with clean HTML, CSS, and JavaScript. Design inspired by <a href="https://brittanychiang.com" target="_blank">Brittany Chiang</a>.</p>
-    </footer>
-
-  </main>
-</div>
+<footer class="footer">
+  <p>Designed & Built by Muhammad Imran</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
