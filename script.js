@@ -1,38 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.getElementById('nav');
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  const sections = document.querySelectorAll('.content-section');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
+  function updateActiveNav() {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if (window.scrollY >= top) {
+        current = section.getAttribute('id');
+      }
     });
-  });
 
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav();
+
+  const items = document.querySelectorAll('.experience-item');
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.1 }
   );
 
-  document.querySelectorAll(
-    '.section-title, .about-text, .about-highlights, .highlight-card, ' +
-    '.skill-category, .project-card, .timeline-item, .contact-card, .cert-grid'
-  ).forEach(el => {
-    el.classList.add('fade-in');
-    observer.observe(el);
+  items.forEach((item, i) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(12px)';
+    item.style.transition = `opacity 0.4s ease ${i * 0.05}s, transform 0.4s ease ${i * 0.05}s`;
+    observer.observe(item);
   });
 });
